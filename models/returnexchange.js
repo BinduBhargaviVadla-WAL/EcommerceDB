@@ -11,6 +11,7 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      ReturnExchange.belongsTo(models.order_items,{foreignKey:"order_itemsId"})
     }
   }
   ReturnExchange.init({

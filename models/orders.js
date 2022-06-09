@@ -16,6 +16,7 @@ module.exports = (sequelize, DataTypes) => {
       orders.belongsTo(Users,{foreignKey:"userId"})
       orders.belongsTo(useraddress,{foreignKey:"addressId"})
       orders.belongsTo(OrderStatus,{foreignKey:"orderStatusId"})
+      orders.hasMany(models.order_items,{foreignKey:"orderId",as:"orders"})
     }
   }
   orders.init({

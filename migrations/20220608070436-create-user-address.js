@@ -26,6 +26,14 @@ module.exports = {
       country: {
         type: Sequelize.STRING
       },
+      userId: {
+        type: Sequelize.INTEGER,
+        references: {
+          model: "Users",
+          key: "id",
+          as: "userId",
+        },
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE
